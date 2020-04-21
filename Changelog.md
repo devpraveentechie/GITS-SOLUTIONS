@@ -115,7 +115,7 @@ Lots of additional documentation updates thanks to @doaboa, @cheickmec, @nicogre
 
 Major version updates are finally here! It's been awhile, but we're a small team that's been pushing this for awhile. Thanks to several users' PRs, we were able to cherry-pick a lot from the dev branch to push this release out. We decided because of the amount of dependencies that needed to be updated- we would overshoot some of the changes made on the dev branch and just grab the most pressing ones.
 
-Next steps for us will be revisiting the dev branch, revisiting outstanding PRs and RFCs (like Immutable), and also plugging away at a create-react-app spinoff for react-boilerplate.
+Next steps for us will be revisiting the dev branch, revisiting outstanding PRs and RFCs (like Immutable), and also plugging away at a create-react-app spinoff for gits-solutions.
 
 ### Main
 
@@ -223,7 +223,7 @@ Many fixes to documentation thanks to @Aftabnack, @auchenberg, @danielrob, @greg
 - **Switch to Jest for testing**, massive thanks to @dmitriiabramov
 - **Update to webpack 2 RC** (includes switching from `System.import` to `import()`), thanks to @Dattaya
 - **Add progress bar while loading code splitted routes**, thanks to @KarandikarMihir
-- **Add the "Hitchhikers Guide to `react-boilerplate` to the docs**, massive thanks to @KarandikarMihir
+- **Add the "Hitchhikers Guide to `gits-solutions` to the docs**, massive thanks to @KarandikarMihir
 - Update all dependencies, as always huge thanks to @gihrig, our master of dependencies
 - Enable `import/first` eslint rule and rewrite all imports, huge thanks to @KarandikarMihir
 - Add Node v7 support and deprecate v4 support, thanks to @samit4me @MariusRumpf
@@ -258,17 +258,17 @@ Many fixes to documentation thanks to @Aftabnack, @auchenberg, @danielrob, @greg
 
 ### News
 
-Welcome @KarandikarMihir to the team! Karandikar has been all over the repo, providing fixes and features. Happy to have him on board to make `react-boilerplate` even better!
+Welcome @KarandikarMihir to the team! Karandikar has been all over the repo, providing fixes and features. Happy to have him on board to make `gits-solutions` even better!
 
 Special thanks as always to @gihrig for diligently testing everything and keeping our dependencies up to date!
 
 Also, huge props to @samit4me and @Dattaya for being everywhere and fixing so many issues and of course to @KarandikarMihir for all his hard work.
 
-If you want to help us make react-boilerplate great, please use the `dev` branch, test all the things and report all the bugs!
+If you want to help us make gits-solutions great, please use the `dev` branch, test all the things and report all the bugs!
 
 ### Supporters
 
-This release was made possible by [Fullstack React](https://www.fullstackreact.com/) and [Serverless](http://serverless.com)! _Want to support us too? [Click here!](http://opencollective.com/react-boilerplate)_
+This release was made possible by [Fullstack React](https://www.fullstackreact.com/) and [Serverless](http://serverless.com)! _Want to support us too? [Click here!](http://opencollective.com/gits-solutions)_
 
 ## RBP v3.0: The "JS Fatigue Antivenin" Edition
 

@@ -6,7 +6,7 @@
 npm run setup
 ```
 
-Initializes a new project with this boilerplate. Deletes the `react-boilerplate`
+Initializes a new project with this boilerplate. Deletes the `gits-solutions`
 git history, installs the dependencies and initializes a new repository.
 
 > Note: This command is self-destructive, once you've run it the init script is
@@ -97,7 +97,7 @@ npm test
 ```
 
 Tests your application with the unit tests specified in the `**/tests/*.js` files
-throughout the application.  
+throughout the application.
 All the `test` commands allow an optional `-- [string]` argument to filter
 the tests run by Jest. Useful if you need to run a specific test only.
 

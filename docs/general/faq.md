@@ -12,7 +12,7 @@
 - [Non-route containers](#non-route-containers)
   - [Where do I put the reducer?](#where-do-i-put-the-reducer)
 - [Use CI with bitbucket pipelines](#use-ci-with-bitbucket-pipelines)
-- [How to keep my project up-to-date with `react-boilerplate`?](#how-to-keep-my-project-up-to-date-with-react-boilerplate)
+- [How to keep my project up-to-date with `gits-solutions`?](#how-to-keep-my-project-up-to-date-with-gits-solutions)
 - [How to turn off Webpack performance warnings after production build?](#how-to-turn-off-webpack-performance-warnings-after-production-build)
 - [Styles getting overridden?](#styles-getting-overridden)
 - [Have another question?](#have-another-question)
@@ -159,9 +159,9 @@ pipelines:
           - npm test
 ```
 
-## How to keep my project up-to-date with `react-boilerplate`?
+## How to keep my project up-to-date with `gits-solutions`?
 
-While it's possible to keep your project up-to-date or "in sync" with `react-boilerplate`, it's usually
+While it's possible to keep your project up-to-date or "in sync" with `gits-solutions`, it's usually
 very difficult and is therefore **_at your own risk_** and not recommended. You should not need to do it either, as
 every version you use will be amazing! There is a long term goal to make this much easier but no ETA at the moment.
 
@@ -255,6 +255,6 @@ More information is available in the [official documentation](https://github.com
 
 ## Have another question?
 
-Submit an [issue](https://github.com/react-boilerplate/react-boilerplate/issues),
-hop onto the [Spectrum chat](https://spectrum.chat/react-boilerplate)
+Submit an [issue](https://github.com/don4/GITS-SOLUTIONS/issues),
+hop onto the [Spectrum chat](https://spectrum.chat/gits-solutions)
 or contact Max direct on [twitter](https://twitter.com/mxstbr)!
