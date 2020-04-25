@@ -6,14 +6,24 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './messages';
 
 export default function NotFound() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div>
+      <Helmet>
+        <title>Page Not Found</title>
+        <meta
+          name="description"
+          content="Page Not Found in gits solutions application"
+        />
+      </Helmet>
+      <h1>
+        <FormattedMessage {...messages.header} />
+      </h1>
+    </div>
   );
 }

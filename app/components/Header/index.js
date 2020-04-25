@@ -57,18 +57,19 @@ class Header extends React.Component {
         <Navbar color="faded" light toggleable="lg">
           <Container>
             <div className="d-flex justify-content-between">
-              <NavbarBrand tag={A} to={logoLink}>
-                <Img fluid alt={altText} src={GitsLogo} className="my-2 logo" />
+              <NavbarBrand tag={A} to={logoLink} className="logo">
+                <Img fluid alt={altText} src={GitsLogo} className="my-2" />
+                <span className="sub-title">Solutions</span>
               </NavbarBrand>
               <NavbarToggler onClick={this.navToggle} />
             </div>
             <Collapse navbar isOpen={this.state.isOpen}>
               <Nav navbar className="mr-auto">
                 <NavItem>
-                  <NavLink>Home</NavLink>
+                  <NavLink href="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink>About Us</NavLink>
+                  <NavLink href="/about-us">About Us</NavLink>
                 </NavItem>
                 <NavDropdown
                   isOpen={this.state.dropdownOpen}
@@ -85,10 +86,10 @@ class Header extends React.Component {
                   </DropdownMenu>
                 </NavDropdown>
                 <NavItem>
-                  <NavLink>Our Clients</NavLink>
+                  <NavLink href="/our-clients">Our Clients</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink>Contact Us</NavLink>
+                  <NavLink href="/contact-us">Contact Us</NavLink>
                 </NavItem>
               </Nav>
               <Form inline className="my-2 my-lg-0">

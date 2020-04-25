@@ -43,7 +43,23 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <App
+            title="Gits-Solutions"
+            name="Gits-Solutions"
+            theme={{
+              '$font-family-base': 'Helvetica',
+              '$body-color': '#EA638C',
+              '$btn-primary-bg': '#190E4F',
+              '$btn-border-radius': '.035rem',
+              '$brand-danger': '#002A22',
+              '$badge-color': '#2ed167',
+              '$badge-pill-border-radius': '.5rem',
+              '$alert-border-radius': '.35rem',
+              '$alert-success-text': '#EA638C',
+              '$alert-success-bg': '#03012C',
+              '$link-color': '#4266AA',
+            }}
+          />
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
