@@ -16,7 +16,6 @@ import {
   Input,
   Button,
   Navbar,
-  Container,
   NavbarBrand,
   NavbarToggler,
   Collapse,
@@ -28,6 +27,14 @@ import {
   DropdownMenu,
   DropdownItem,
 } from '@bootstrap-styled/v4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faSearch,
+  faTimes,
+  faChevronCircleDown,
+  faChevronCircleUp,
+} from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import StyledHeader from './StyledHeader';
 import { altText, logoLink } from './constant';
 import GitsLogo from './gits-solution-logo.png';
@@ -38,72 +45,117 @@ class Header extends React.Component {
     this.state = {
       isOpen: false,
       dropdownOpen: false,
+      isActiveSearch: false,
     };
-    this.navToggle = this.navToggle.bind(this);
-    this.dropDownToggle = this.dropDownToggle.bind(this);
+    this.handleNavToggle = this.handleNavToggle.bind(this);
+    this.handleDropDownToggle = this.handleDropDownToggle.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleHide = this.handleHide.bind(this);
   }
 
-  navToggle() {
+  handleNavToggle = () => {
     this.setState(prevState => ({ isOpen: !prevState.isOpen }));
-  }
+  };
 
-  dropDownToggle() {
+  handleDropDownToggle = () => {
     this.setState(prevState => ({ dropdownOpen: !prevState.dropdownOpen }));
-  }
+  };
+
+  handleShow = e => {
+    e.preventDefault();
+    this.setState({
+      isActiveSearch: true,
+    });
+  };
+
+  handleHide = e => {
+    e.preventDefault();
+    this.setState({
+      isActiveSearch: false,
+    });
+  };
 
   render() {
+    const caret = this.state.dropdownOpen
+      ? faChevronCircleUp
+      : faChevronCircleDown;
     return (
       <StyledHeader>
         <Navbar color="faded" light toggleable="lg">
-          <Container>
-            <div className="d-flex justify-content-between">
-              <NavbarBrand tag={A} to={logoLink} className="logo">
-                <Img fluid alt={altText} src={GitsLogo} className="my-2" />
-                <span className="sub-title">Solutions</span>
-              </NavbarBrand>
-              <NavbarToggler onClick={this.navToggle} />
-            </div>
-            <Collapse navbar isOpen={this.state.isOpen}>
-              <Nav navbar className="mr-auto">
-                <NavItem>
-                  <NavLink href="/">Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/about-us">About Us</NavLink>
-                </NavItem>
-                <NavDropdown
-                  isOpen={this.state.dropdownOpen}
-                  toggle={this.dropDownToggle}
-                >
-                  <DropdownToggle nav caret>
-                    Courses
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>Category</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
-                  </DropdownMenu>
-                </NavDropdown>
-                <NavItem>
-                  <NavLink href="/our-clients">Our Clients</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/contact-us">Contact Us</NavLink>
-                </NavItem>
-              </Nav>
-              <Form inline className="my-2 my-lg-0">
-                <Input
-                  className="form-control mr-sm-2"
-                  type="text"
-                  placeholder="Search"
-                />
-                <Button href="/" color="success">
-                  Search
-                </Button>
-              </Form>
-            </Collapse>
-          </Container>
+          <div className="d-flex logo-wrapper">
+            <NavbarBrand tag={A} to={logoLink} className="logo">
+              <Img fluid alt={altText} src={GitsLogo} />
+              <span className="sub-title">GITS Solutions</span>
+            </NavbarBrand>
+            <A
+              href="/"
+              onClick={this.handleShow}
+              className="search-link search-link-header"
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </A>
+            <NavbarToggler onClick={this.handleNavToggle} />
+          </div>
+          <Collapse navbar isOpen={this.state.isOpen}>
+            <Nav navbar className="mr-auto">
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/about-us">About Us</NavLink>
+              </NavItem>
+              <NavDropdown
+                isOpen={this.state.dropdownOpen}
+                toggle={this.handleDropDownToggle}
+              >
+                <DropdownToggle nav className="dropdown-link">
+                  <span className="dropdown-text">Courses</span>
+                  <FontAwesomeIcon icon={caret} />
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem header>Category</DropdownItem>
+                  <DropdownItem>Another Action</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Another Action</DropdownItem>
+                </DropdownMenu>
+              </NavDropdown>
+              <NavItem>
+                <NavLink href="/our-clients">Our Clients</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contact-us">Contact Us</NavLink>
+              </NavItem>
+            </Nav>
+            <Form inline className="form-nav">
+              <A
+                href="/"
+                onClick={this.handleShow}
+                className="search-link search-link-nav"
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </A>
+              {this.state.isActiveSearch ? (
+                <div className="full-width-search">
+                  <span className="search">
+                    <FontAwesomeIcon icon={faSearch} />
+                  </span>
+                  <Input
+                    className="form-control mr-sm-2"
+                    type="text"
+                    placeholder="Search in Gits Solutions"
+                  />
+                  <A className="close" href="/" onClick={this.handleHide}>
+                    <FontAwesomeIcon icon={faTimes} />
+                  </A>
+                </div>
+              ) : null}
+            </Form>
+            <A href="tel:919958186681" className="whatsapp-link">
+              <FontAwesomeIcon icon={faWhatsapp} />
+              <span>+91-99581-86681</span>
+            </A>
+            <Button className="enquiry-button">Enquiry</Button>
+          </Collapse>
         </Navbar>
       </StyledHeader>
     );
